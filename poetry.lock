@@ -8,17 +8,17 @@ python-versions = "*"
 
 [[package]]
 name = "gremlinpython"
-version = "3.4.4"
+version = "3.4.8"
 description = "Gremlin-Python for Apache TinkerPop"
 category = "main"
 optional = false
 python-versions = "*"
 
 [package.dependencies]
-aenum = ">=1.4.5"
-isodate = ">=0.6.0"
-six = ">=1.10.0"
-tornado = ">=4.4.1,<5.0"
+aenum = ">=1.4.5,<3.0.0"
+isodate = ">=0.6.0,<1.0.0"
+six = ">=1.10.0,<2.0.0"
+tornado = ">=4.4.1,<6.0"
 
 [[package]]
 name = "isodate"
@@ -41,16 +41,16 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 
 [[package]]
 name = "tornado"
-version = "4.5.3"
+version = "5.1.1"
 description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
 category = "main"
 optional = false
-python-versions = "*"
+python-versions = ">= 2.7, !=3.0.*, !=3.1.*, !=3.2.*, != 3.3.*"
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "117623672028c04e10c620c95e3ee925a47c5dec9825abee4ed85c37690530b7"
+content-hash = "4ddc298e2e331322da968d387242b260e87a7f97dcfea8a909b95503f3278bf0"
 
 [metadata.files]
 aenum = [
@@ -59,8 +59,8 @@ aenum = [
     {file = "aenum-2.2.4.tar.gz", hash = "sha256:81828d1fbe20b6b188d75b21a0fa936d7d929d839ef843ef385d9c2a97082864"},
 ]
 gremlinpython = [
-    {file = "gremlinpython-3.4.4-py2.py3-none-any.whl", hash = "sha256:7e7876dca4de88c1c7522b503ee487d3138faae569756bc23d661e22ad6cc29f"},
-    {file = "gremlinpython-3.4.4.tar.gz", hash = "sha256:80136d10d7af60fae8bfb5f9f84b02884e582485d8889f604e531a546c393afa"},
+    {file = "gremlinpython-3.4.8-py2.py3-none-any.whl", hash = "sha256:21d49b7fc303a4463269c83330e644fa2771f5ef86451e5512a2437da40c5deb"},
+    {file = "gremlinpython-3.4.8.tar.gz", hash = "sha256:9a4f728908ded2bf8053dca01dae0724c1311455c78d058bf3682ae28f22d681"},
 ]
 isodate = [
     {file = "isodate-0.6.0-py2.py3-none-any.whl", hash = "sha256:aa4d33c06640f5352aca96e4b81afd8ab3b47337cc12089822d6f322ac772c81"},
@@ -71,9 +71,11 @@ six = [
     {file = "six-1.15.0.tar.gz", hash = "sha256:30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"},
 ]
 tornado = [
-    {file = "tornado-4.5.3-cp35-cp35m-win32.whl", hash = "sha256:92b7ca81e18ba9ec3031a7ee73d4577ac21d41a0c9b775a9182f43301c3b5f8e"},
-    {file = "tornado-4.5.3-cp35-cp35m-win_amd64.whl", hash = "sha256:b36298e9f63f18cad97378db2222c0e0ca6a55f6304e605515e05a25483ed51a"},
-    {file = "tornado-4.5.3-cp36-cp36m-win32.whl", hash = "sha256:ab587996fe6fb9ce65abfda440f9b61e4f9f2cf921967723540679176915e4c3"},
-    {file = "tornado-4.5.3-cp36-cp36m-win_amd64.whl", hash = "sha256:5ef073ac6180038ccf99411fe05ae9aafb675952a2c8db60592d5daf8401f803"},
-    {file = "tornado-4.5.3.tar.gz", hash = "sha256:6d14e47eab0e15799cf3cdcc86b0b98279da68522caace2bd7ce644287685f0a"},
+    {file = "tornado-5.1.1-cp35-cp35m-win32.whl", hash = "sha256:732e836008c708de2e89a31cb2fa6c0e5a70cb60492bee6f1ea1047500feaf7f"},
+    {file = "tornado-5.1.1-cp35-cp35m-win_amd64.whl", hash = "sha256:0662d28b1ca9f67108c7e3b77afabfb9c7e87bde174fbda78186ecedc2499a9d"},
+    {file = "tornado-5.1.1-cp36-cp36m-win32.whl", hash = "sha256:8154ec22c450df4e06b35f131adc4f2f3a12ec85981a203301d310abf580500f"},
+    {file = "tornado-5.1.1-cp36-cp36m-win_amd64.whl", hash = "sha256:d4b3e5329f572f055b587efc57d29bd051589fb5a43ec8898c77a47ec2fa2bbb"},
+    {file = "tornado-5.1.1-cp37-cp37m-win32.whl", hash = "sha256:e5f2585afccbff22390cddac29849df463b252b711aa2ce7c5f3f342a5b3b444"},
+    {file = "tornado-5.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:8e9d728c4579682e837c92fdd98036bd5cdefa1da2aaf6acf26947e6dd0c01c5"},
+    {file = "tornado-5.1.1.tar.gz", hash = "sha256:4e5158d97583502a7e2739951553cbd88a72076f152b4b11b64b9a10c4c49409"},
 ]
