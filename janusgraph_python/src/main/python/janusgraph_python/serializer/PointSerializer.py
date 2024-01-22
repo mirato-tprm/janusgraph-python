@@ -33,9 +33,12 @@ class PointSerializer(object):
         Returns:
             json
         """
-
         geometryJSON = toGeoJSON(point).convert()
 
-        serializedJSON = GraphSONUtil.typedValue(cls.GRAPHSON_BASE_TYPE, geometryJSON, cls.GRAPHSON_PREFIX)
+        serializedJSON = GraphSONUtil.typedValue(
+            cls.GRAPHSON_BASE_TYPE,
+            geometryJSON,
+            cls.GRAPHSON_PREFIX,
+        )
 
         return serializedJSON

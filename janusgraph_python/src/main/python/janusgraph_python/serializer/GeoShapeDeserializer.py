@@ -30,7 +30,6 @@ class GeoShapeDeserializer(object):
         Returns:
             GeoShape
         """
-
         if graphsonObj.get("geometry") is not None:
             # Its a Geometry object
             geometryData = graphsonObj["geometry"]
@@ -46,7 +45,6 @@ class GeoShapeDeserializer(object):
                 radiusUnits = geometryDataValue["properties"][cls.VALUE_KEY][1]
 
                 if len(coordinates) >= 2:
-
                     if shape.lower() == "circle":
                         if radiusUnits:
                             if radiusUnits.lower() == "km":
@@ -54,22 +52,31 @@ class GeoShapeDeserializer(object):
                             elif radiusUnits.lower() == "m":
                                 radius = 0.001 * radius
                             else:
-                                raise NotImplementedError("Current JanusGraph python serializers can only \
-                                                            understand Radius units in KM and Mts.")
+                                raise NotImplementedError(
+                                    "Current JanusGraph python serializers can only \
+                                                            understand Radius units in KM and Mts."
+                                )
 
                         else:
                             radius = radius
 
-                        circle = cls.__deserialize_circle_from_coordinates(coordinates, radius)
+                        circle = cls.__deserialize_circle_from_coordinates(
+                            coordinates,
+                            radius,
+                        )
 
                         return circle
 
                     else:
-                        raise NotImplementedError("Currently implemented De-serialization \
-                                                        for Geometry shapes CIRCLE and POINT.")
+                        raise NotImplementedError(
+                            "Currently implemented De-serialization \
+                                                        for Geometry shapes CIRCLE and POINT."
+                        )
 
                 else:
-                    raise AttributeError("Invalid GeoShape parameters passed. Co-ordinates need to be > 2")
+                    raise AttributeError(
+                        "Invalid GeoShape parameters passed. Co-ordinates need to be > 2"
+                    )
             else:
                 raise ValueError("Invalid GeoShape passed.")
         else:

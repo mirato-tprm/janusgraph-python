@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
 import unittest
 from janusgraph_python.structure.io.GraphsonWriter import JanusGraphSONWriter
 from gremlin_python.structure.io.graphsonV3d0 import GraphSONUtil
@@ -20,15 +19,19 @@ import json
 
 
 class X(object):
+
     def objectify(self):
-        return {key: value for key, value in self.__dict__.items()
-                if not key.startswith('__') and not callable(key)}
+        return {
+            key: value
+            for key, value in self.__dict__.items()
+            if not key.startswith('__') and not callable(key)
+        }
 
 
 class MockSerializer(object):
     GRAPHSON_PREFIX = "janusgraph"
     GRAPHSON_BASE_TYPE = "MOCK"
-    GRAPHSON_TYPE = GraphSONUtil.formatType(GRAPHSON_PREFIX, GRAPHSON_BASE_TYPE)
+    GRAPHSON_TYPE = GraphSONUtil.format_type(GRAPHSON_PREFIX, GRAPHSON_BASE_TYPE)
     serializedJSON = None
 
     @classmethod

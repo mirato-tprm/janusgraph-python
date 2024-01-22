@@ -27,8 +27,8 @@ class JanusGraphSONReader(object):
     GRAPHSON_PREFIX = "janusgraph"
     GEO_GRAPHSON_BASE_TYPE = "Geoshape"
     RELATIONID_BASE_TYPE = "RelationIdentifier"
-    GeoShape_GRAPHSON_TYPE = GraphSONUtil.formatType(GRAPHSON_PREFIX, GEO_GRAPHSON_BASE_TYPE)
-    RelationID_GRAPHSON_TYPE = GraphSONUtil.formatType(GRAPHSON_PREFIX, RELATIONID_BASE_TYPE)
+    GeoShape_GRAPHSON_TYPE = GraphSONUtil.format_type(GRAPHSON_PREFIX, GEO_GRAPHSON_BASE_TYPE)
+    RelationID_GRAPHSON_TYPE = GraphSONUtil.format_type(GRAPHSON_PREFIX, RELATIONID_BASE_TYPE)
 
     deserializers = dict()
 
@@ -82,7 +82,7 @@ class JanusGraphSONReader(object):
 
         """
 
-        objectIdentifier = GraphSONUtil.formatType(self.GRAPHSON_PREFIX, typeClass)
+        objectIdentifier = GraphSONUtil.format_type(self.GRAPHSON_PREFIX, typeClass)
 
         self.deserializers[objectIdentifier] = deserializer
 

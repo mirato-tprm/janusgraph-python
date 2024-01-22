@@ -21,7 +21,7 @@ class CircleSerializer(object):
 
     GRAPHSON_PREFIX = "janusgraph"
     GRAPHSON_BASE_TYPE = "Geoshape"
-    GRAPHSON_TYPE = GraphSONUtil.formatType(GRAPHSON_PREFIX, GRAPHSON_BASE_TYPE)
+    GRAPHSON_TYPE = GraphSONUtil.format_type(GRAPHSON_PREFIX, GRAPHSON_BASE_TYPE)
 
     @classmethod
     def dictify(cls, circle, writer):
@@ -37,6 +37,10 @@ class CircleSerializer(object):
 
         geometryJSON = toGeoJSON(circle).convert()
 
-        serializedJSON = GraphSONUtil.typedValue(cls.GRAPHSON_BASE_TYPE, geometryJSON, cls.GRAPHSON_PREFIX)
+        serializedJSON = GraphSONUtil.typedValue(
+             cls.GRAPHSON_BASE_TYPE,
+             geometryJSON,
+             cls.GRAPHSON_PREFIX,
+         )
 
         return serializedJSON
