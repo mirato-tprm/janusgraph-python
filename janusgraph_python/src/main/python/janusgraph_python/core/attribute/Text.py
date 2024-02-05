@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-from gremlin_python.process.traversal import P
+from ..datatypes.JanusGraphP import JanusGraphP
 
 
 class Text(object):
@@ -31,7 +31,7 @@ class Text(object):
             bool: Returns true iff one word (at least) inside the text string matches the query string.
         """
 
-        return P("textContains", value)
+        return JanusGraphP("textContains", value)
 
     @staticmethod
     def textContainsPrefix(value):
@@ -45,7 +45,7 @@ class Text(object):
         Returns:
             bool: Returns true iff one word (at least) inside the text string begins with the query string.
         """
-        return P("textContainsPrefix", value)
+        return JanusGraphP("textContainsPrefix", value)
 
     @staticmethod
     def textPrefix(value):
@@ -59,7 +59,7 @@ class Text(object):
         Returns:
             bool: Returns true iff the string value starts with the given query string.
         """
-        return P("textPrefix", value)
+        return JanusGraphP("textPrefix", value)
 
     @staticmethod
     def textContainsRegex(value):
@@ -74,7 +74,7 @@ class Text(object):
             bool: Returns true iff one word (at least) inside the text string matches the given regular expression.
         """
 
-        return P("textContainsRegex", value)
+        return JanusGraphP("textContainsRegex", value)
 
     @staticmethod
     def textRegex(value):
@@ -88,8 +88,7 @@ class Text(object):
         Returns:
             bool: Returns true iff the string value matches the given regular expression in its entirety.
         """
-
-        return P("textRegex", value)
+        return JanusGraphP("textRegex", value)
 
     @staticmethod
     def textFuzzy(value):
@@ -104,7 +103,7 @@ class Text(object):
             bool: Returns true iff the string value is similar to the given query string.
         """
 
-        return P("textFuzzy", value)
+        return JanusGraphP("textFuzzy", value)
 
     @staticmethod
     def textContainsFuzzy(value):
@@ -120,4 +119,4 @@ class Text(object):
             bool: Returns true iff one word inside the text string is similar to the query String.
         """
 
-        return P("textContainsFuzzy", value)
+        return JanusGraphP("textContainsFuzzy", value)
