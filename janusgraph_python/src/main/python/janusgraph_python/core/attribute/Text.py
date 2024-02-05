@@ -88,7 +88,6 @@ class Text(object):
         Returns:
             bool: Returns true iff the string value matches the given regular expression in its entirety.
         """
-
         return P("textRegex", value)
 
     @staticmethod
