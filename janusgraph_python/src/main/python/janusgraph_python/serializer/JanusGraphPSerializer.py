@@ -24,7 +24,6 @@ class JanusGraphPSerializer(object):
         predicateJSON = cls.__predicate_to_dict(p)
 
         serializedJSON = GraphSONUtil.typed_value(cls.GRAPHSON_BASE_TYPE, predicateJSON, cls.GRAPHSON_PREFIX)
-        print(serializedJSON)
         return serializedJSON
 
     @classmethod
